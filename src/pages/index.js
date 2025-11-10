@@ -9,7 +9,8 @@ const Index = ({ data }) => {
   const [supportOpen, setSupportOpen] = useState(false)
   const { introText, missionText, supporterText, splashImages } =
     data.contentfulSplashPage
-  const { address, phone, email, logos } = data.contentfulFooter
+  const { address, phone, email, logos, addressLink, logoLinks } =
+    data.contentfulFooter
   const { width } = useWindowSize()
   const isMobile = width < 769
 
@@ -61,12 +62,18 @@ const Index = ({ data }) => {
           </button>
           <div className="footer">
             <div className="logos">
-              {logos.map((logo, index) => (
-                <GatsbyImage
+              {logoLinks.map((link, index) => (
+                <a
+                  href={link.logoLink}
+                  target="_blank"
+                  rel="noreferrer"
                   key={index}
-                  image={logo.gatsbyImageData}
-                  className="splash-logo"
-                ></GatsbyImage>
+                >
+                  <GatsbyImage
+                    image={link.logo.gatsbyImageData}
+                    className="splash-logo"
+                  ></GatsbyImage>
+                </a>
               ))}
             </div>
             <div className="splash-email">
@@ -74,10 +81,13 @@ const Index = ({ data }) => {
               <br />
               {phone}
             </div>
-            <div
+            <a
+              href={addressLink}
+              target="_blank"
+              rel="noreferrer"
               dangerouslySetInnerHTML={{ __html: address }}
               className="splash-email"
-            ></div>
+            ></a>
           </div>
           {!isMobile && <EmbedForm></EmbedForm>}
         </div>
@@ -124,10 +134,13 @@ const Index = ({ data }) => {
         </div>
       )}
       <div className="mobile-footer">
-        <div
+        <a
+          href={addressLink}
+          target="_blank"
+          rel="noreferrer"
           dangerouslySetInnerHTML={{ __html: address }}
           className="mobile-splash-address"
-        ></div>
+        ></a>
         <div className="mobile-splash-email">
           {email}
           <br />
@@ -137,12 +150,18 @@ const Index = ({ data }) => {
           <EmbedForm></EmbedForm>
         </div>
         <div className="mobile-logos">
-          {logos.map((logo, index) => (
-            <GatsbyImage
+          {logoLinks.map((link, index) => (
+            <a
+              href={link.logoLink}
+              target="_blank"
+              rel="noreferrer"
               key={index}
-              image={logo.gatsbyImageData}
-              className="splash-mobile-logo"
-            ></GatsbyImage>
+            >
+              <GatsbyImage
+                image={link.logo.gatsbyImageData}
+                className="splash-mobile-logo"
+              ></GatsbyImage>
+            </a>
           ))}
         </div>
       </div>
@@ -186,6 +205,13 @@ export const query = graphql`
       phone
       logos {
         gatsbyImageData(layout: FULL_WIDTH)
+      }
+      addressLink
+      logoLinks {
+        logoLink
+        logo {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
       }
     }
   }

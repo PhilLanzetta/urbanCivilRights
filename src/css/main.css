@@ -66,6 +66,12 @@ button:hover {
   transition: all 400ms;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 400ms;
+}
+
 h1,
 h2,
 h3 {
@@ -305,6 +311,7 @@ h3 {
   margin-bottom: 0;
   padding: 10px;
   padding-left: 0px;
+  font-family: var(--font-secondary);
 }
 
 .sli-button, .sli-flat, .sli-small {
