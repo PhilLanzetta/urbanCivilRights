@@ -67,7 +67,7 @@ button:hover {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   transition: all 400ms;
 }
@@ -88,22 +88,24 @@ h3 {
 .splash-left {
   width: 50%;
   padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 40px;
   font-family: var(--font-primary);
   font-size: 35px;
-  height: fit-content;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
   position: sticky;
   top: 0;
+  left: 0;
 }
 
 .splash-left h1 {
   font-size: 100px;
   text-transform: uppercase;
   line-height: 80px;
+}
+
+.logo-svg {
+  width: 80%;
+  margin-bottom: 35px;
 }
 
 .form-heading {
@@ -176,12 +178,17 @@ h3 {
 .splash-left p {
   line-height: 0.95;
   margin-bottom: 35px;
+  letter-spacing: 0.015em;
 }
 
 .splash-right {
   width: 50%;
   background: #000;
   padding: 30px;
+}
+
+.splash-right div:last-of-type {
+  margin-bottom: 0;
 }
 
 .salsa-container {
@@ -199,6 +206,7 @@ h3 {
   font-size: 18px;
   line-height: 1.05;
   margin-bottom: 10px;
+  letter-spacing: normal;
 }
 
 .support-btn {
@@ -222,7 +230,7 @@ h3 {
   display: flex;
   width: 100%;
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
 }
 
 .figure-left {
@@ -262,10 +270,8 @@ h3 {
 .logos {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   row-gap: 20px;
-  flex-grow: 1;
   column-gap: 10%;
 }
 
@@ -285,6 +291,10 @@ h3 {
   border: 1px solid #000;
 }
 
+#id_7ba82e57-d579-4729-9573-b45412e17be5_container {
+  padding: 0 !important;
+}
+
 #id_bed2d656-3b8f-405a-8365-41b73bae6f86 {
   width: 75%;
 }
@@ -296,6 +306,7 @@ h3 {
   font-family: var(--font-secondary);
   padding: 10px !important;
   background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 #id_47cf023e-12ce-488a-94bc-03a6e1cf2999_input:focus {
@@ -314,7 +325,9 @@ h3 {
   font-family: var(--font-secondary);
 }
 
-.sli-button, .sli-flat, .sli-small {
+.sli-button,
+.sli-flat,
+.sli-small {
   background: none !important;
   color: #000 !important;
   font-family: var(--font-secondary);
@@ -346,8 +359,7 @@ h3 {
   .splash-left {
     width: 100%;
     padding: 15px;
-    display: flex;
-    font-size: 23px;
+    font-size: 25px;
     height: auto;
     position: relative;
   }
@@ -356,6 +368,7 @@ h3 {
     width: 100%;
     background: #000;
     padding: 15px;
+    padding-bottom: 20px;
     padding-top: 60px;
   }
 
@@ -398,11 +411,12 @@ h3 {
   }
 
   .splash-left h3 {
-    font-size: 23px;
+    font-size: 25px;
+    line-height: 25px;
   }
 
   .supporter-text p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .support-btn {
@@ -411,36 +425,53 @@ h3 {
   }
 
   .form-title {
-  font-size: 52px;
-  text-transform: uppercase;
-  line-height: 50px;
-  font-family: var(--font-primary);
-  font-weight: bold;
-}
+    font-size: 52px;
+    text-transform: uppercase;
+    line-height: 50px;
+    font-family: var(--font-primary);
+    font-weight: bold;
+  }
 
-.mobile-footer {
-  display: flex;
-  flex-direction: column;
-}
+  .mobile-footer {
+    display: flex;
+    flex-direction: column;
+  }
 
-.mobile-splash-address, .mobile-splash-email {
-  text-transform: uppercase;
-  background: #ffc403;
-  padding: 15px;
-}
+  .mobile-splash-address,
+  .mobile-splash-email {
+    text-transform: uppercase;
+    background: #ffc403;
+    padding: 20px 15px 0 15px;
+  }
 
-.mobile-logos {
-  display: flex;
-  padding: 15px;
-  gap: 15px;
-  align-items: center;
-}
-.splash-mobile-logo {
-  width: 100px;
-}
+  .mobile-logos {
+    display: flex;
+    padding: 20px 15px;
+    gap: 15px;
+    align-items: center;
+  }
+  .splash-mobile-logo {
+    width: 100px;
+  }
 
-.mobile-sign-up {
-  background: #ffc403;
-  padding: 15px;
-}
+  .mobile-sign-up {
+    background: #ffc403;
+    padding: 15px;
+  }
+
+  .splash-left h2 {
+    margin-bottom: 10px;
+  }
+
+  .splash-intro-text p {
+    margin-bottom: 15px;
+  }
+
+  .splash-caption {
+    font-size: 16px;
+  }
+
+  #id_47cf023e-12ce-488a-94bc-03a6e1cf2999_input::placeholder {
+    color: #000 !important;
+  }
 }
