@@ -11,7 +11,7 @@ const Index = ({ data }) => {
     data.contentfulSplashPage
   const { address, phone, email, logos } = data.contentfulFooter
   const { width } = useWindowSize()
-  const isMobile = width < 761
+  const isMobile = width < 769
 
   const formUrl =
     "https://nationalurbanleague.salsalabs.org/urbancivilrightsmuseum/index.html"
