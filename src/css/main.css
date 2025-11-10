@@ -1,0 +1,438 @@
+@font-face {
+  font-family: "VTC Martin";
+  src: url(../fonts/VTCMartinTrial-Regular.otf) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VTC Martin";
+  src: url(../fonts/VTCMartinTrial-Forward.otf) format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VTC Martin";
+  src: url(../fonts/VTCMartinTrial-Bold.otf) format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VTC Martin";
+  src: url(../fonts/VTCMartinTrial-BoldForward.otf) format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Corundum Text";
+  src: url(../fonts/Corundum-Text-Book-.otf) format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corundum Text";
+  src: url(../fonts/Corundum-Text-Light.otf) format("otf");
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: "VTC Martin", sans-serif;
+  --font-secondary: "Corundum Text", "Times New Roman", serif;
+  --primary-weight: 400;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  transition: all 400ms;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.splash-outer {
+  display: flex;
+  width: 100vw;
+}
+
+.splash-left {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  font-family: var(--font-primary);
+  font-size: 35px;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+}
+
+.splash-left h1 {
+  font-size: 100px;
+  text-transform: uppercase;
+  line-height: 80px;
+}
+
+.form-heading {
+  background: #ffc403;
+  position: relative;
+  padding: 30px;
+  border-bottom: 3px solid #000;
+}
+
+.form-close-btn {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.x-icon {
+  position: relative;
+  display: inline-block; /* Or block, depending on your layout */
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+}
+
+.x-icon::before,
+.x-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Line length relative to parent width */
+  height: 3px; /* Line thickness */
+  background-color: black; /* Line color */
+  transform-origin: center; /* Ensures rotation from the center */
+}
+
+.x-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.x-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.form-title {
+  font-size: 100px;
+  text-transform: uppercase;
+  line-height: 80px;
+  font-family: var(--font-primary);
+  font-weight: bold;
+}
+
+.splash-left h1 span {
+  font-weight: normal;
+}
+
+.splash-left h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.helvetica {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.splash-left h3 {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.splash-left p {
+  line-height: 0.95;
+  margin-bottom: 35px;
+}
+
+.splash-right {
+  width: 50%;
+  background: #000;
+  padding: 30px;
+}
+
+.salsa-container {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #ffc403;
+  overflow-y: scroll;
+}
+
+.supporter-text p {
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.support-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 12px;
+  padding: 2px;
+}
+
+.support-btn:hover {
+  background: #ffc403;
+}
+
+.figure-left,
+.figure-right {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.figure-left {
+  justify-content: flex-start;
+}
+
+.figure-right {
+  justify-content: flex-end;
+}
+
+.splash-caption {
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.splash-image {
+  width: 75%;
+}
+
+.footer {
+  display: flex;
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.splash-email {
+  text-transform: uppercase;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  flex-grow: 1;
+  column-gap: 10%;
+}
+
+.splash-logo {
+  width: 40%;
+  min-width: 80px;
+  max-width: 100px;
+}
+
+.mobile-footer {
+  display: none;
+}
+
+#id_85ccd632-95eb-4075-9c01-bad0b52d8905 {
+  display: flex;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+#id_bed2d656-3b8f-405a-8365-41b73bae6f86 {
+  width: 75%;
+}
+
+#id_47cf023e-12ce-488a-94bc-03a6e1cf2999_input {
+  display: inline-block;
+  width: 100%;
+  border-color: transparent !important;
+  font-family: var(--font-secondary);
+  padding: 10px !important;
+  background-color: transparent !important;
+}
+
+#id_47cf023e-12ce-488a-94bc-03a6e1cf2999_input:focus {
+  outline: none;
+}
+
+#id_4c57bdba-b883-4330-ade5-65451835a6a4 {
+  width: 25%;
+}
+
+#id_6dfc5249-17a5-4264-8eb9-38e8e7ed4176_inner p {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+.sli-button, .sli-flat, .sli-small {
+  background: none !important;
+  color: #000 !important;
+  font-family: var(--font-secondary);
+  border: none !important;
+  border-left: 1px solid #000 !important;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 12px !important;
+}
+
+@media screen and (max-width: 1250px) {
+  .footer {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .footer {
+    display: none;
+  }
+
+  .splash-outer {
+    flex-direction: column;
+  }
+
+  .splash-left {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    font-size: 23px;
+    height: auto;
+    position: relative;
+  }
+
+  .splash-right {
+    width: 100%;
+    background: #000;
+    padding: 15px;
+    padding-top: 60px;
+  }
+
+  .salsa-container {
+    width: 100%;
+  }
+
+  .splash-left h1 {
+    margin-top: 30px;
+    font-size: 45px;
+    text-transform: uppercase;
+    line-height: 40px;
+  }
+
+  .form-heading {
+    background: #ffc403;
+    position: relative;
+    padding: 15px;
+    border-bottom: 3px solid #000;
+  }
+
+  .form-close-btn {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .x-icon {
+    position: relative;
+    display: inline-block; /* Or block, depending on your layout */
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+  }
+
+  .splash-left h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  .splash-left h3 {
+    font-size: 23px;
+  }
+
+  .supporter-text p {
+    font-size: 15px;
+  }
+
+  .support-btn {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .form-title {
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 50px;
+  font-family: var(--font-primary);
+  font-weight: bold;
+}
+
+.mobile-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-splash-address, .mobile-splash-email {
+  text-transform: uppercase;
+  background: #ffc403;
+  padding: 15px;
+}
+
+.mobile-logos {
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+  align-items: center;
+}
+.splash-mobile-logo {
+  width: 100px;
+}
+
+.mobile-sign-up {
+  background: #ffc403;
+  padding: 15px;
+}
+}
