@@ -9,7 +9,7 @@ const Index = ({ data }) => {
   const [supportOpen, setSupportOpen] = useState(false)
   const { introText, missionText, supporterText, splashImages } =
     data.contentfulSplashPage
-  const { address, phone, email, logos, addressLink, logoLinks } =
+  const { address, nysedCredit, email, addressLink, logoLinks } =
     data.contentfulFooter
   const { width } = useWindowSize()
   const isMobile = width < 769
@@ -193,11 +193,10 @@ const Index = ({ data }) => {
                 </a>
               ))}
             </div>
-            <div className="splash-email">
-              {email}
-              <br />
-              {phone}
-            </div>
+            <div
+              className="splash-email"
+              dangerouslySetInnerHTML={{ __html: email }}
+            ></div>
             <a
               href={addressLink}
               target="_blank"
@@ -205,6 +204,7 @@ const Index = ({ data }) => {
               dangerouslySetInnerHTML={{ __html: address }}
               className="splash-email"
             ></a>
+            <div>{nysedCredit}</div>
           </div>
           {!isMobile && <EmbedForm></EmbedForm>}
         </div>
@@ -251,18 +251,19 @@ const Index = ({ data }) => {
         </div>
       )}
       <div className="mobile-footer">
-        <a
-          href={addressLink}
-          target="_blank"
-          rel="noreferrer"
-          dangerouslySetInnerHTML={{ __html: address }}
-          className="mobile-splash-address"
-        ></a>
-        <div className="mobile-splash-email">
-          {email}
-          <br />
-          {phone}
+        <div className="mobile-splash-address">
+          <a
+            href={addressLink}
+            target="_blank"
+            rel="noreferrer"
+            dangerouslySetInnerHTML={{ __html: address }}
+          ></a>
+          <div>{nysedCredit}</div>
         </div>
+        <div
+          className="mobile-splash-email"
+          dangerouslySetInnerHTML={{ __html: email }}
+        ></div>
         <div className="mobile-sign-up">
           <EmbedForm></EmbedForm>
         </div>
@@ -319,10 +320,6 @@ export const query = graphql`
     contentfulFooter {
       address
       email
-      phone
-      logos {
-        gatsbyImageData(layout: FULL_WIDTH)
-      }
       addressLink
       logoLinks {
         logoLink
@@ -330,6 +327,7 @@ export const query = graphql`
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
+      nysedCredit
     }
   }
 `

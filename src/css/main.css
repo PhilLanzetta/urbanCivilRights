@@ -1,27 +1,27 @@
 @font-face {
   font-family: "VTC Martin";
-  src: url(../fonts/VTCMartinTrial-Regular.otf) format("woff2");
+  src: url(../fonts/VTCMartin-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "VTC Martin";
-  src: url(../fonts/VTCMartinTrial-Forward.otf) format("woff2");
+  src: url(../fonts/VTCMartin-Forward.woff2) format("woff2");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "VTC Martin";
-  src: url(../fonts/VTCMartinTrial-Bold.otf) format("woff2");
+  src: url(../fonts/VTCMartin-Bold.woff2) format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "VTC Martin";
-  src: url(../fonts/VTCMartinTrial-BoldForward.otf) format("woff2");
+  src: url(../fonts/VTCMartin-BoldForward.woff2) format("woff2");
   font-weight: bold;
   font-style: italic;
 }
@@ -195,6 +195,7 @@ h3 {
   width: 50%;
   height: 100vh;
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   background: #ffc403;
@@ -257,7 +258,7 @@ h3 {
   font-family: var(--font-secondary);
   font-size: 14px;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   gap: 5%;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -444,6 +445,14 @@ h3 {
     padding: 20px 15px 0 15px;
   }
 
+  .mobile-splash-address {
+    display: flex;
+  }
+
+  .mobile-splash-address a, .mobile-splash-address div {
+    width: 50%;
+  }
+
   .mobile-logos {
     display: flex;
     padding: 20px 15px;
@@ -473,5 +482,9 @@ h3 {
 
   #id_47cf023e-12ce-488a-94bc-03a6e1cf2999_input::placeholder {
     color: #000 !important;
+  }
+
+  .salsa-container {
+    padding-bottom: 10vh;
   }
 }
