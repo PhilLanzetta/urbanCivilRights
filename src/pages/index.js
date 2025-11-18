@@ -9,7 +9,7 @@ const Index = ({ data }) => {
   const [supportOpen, setSupportOpen] = useState(false)
   const { introText, missionText, supporterText, splashImages } =
     data.contentfulSplashPage
-  const { address, nysedCredit, email, addressLink, logoLinks } =
+  const { address, nysedCredit, email, addressLink, logoLinks, careersLink } =
     data.contentfulFooter
   const { width } = useWindowSize()
   const isMobile = width < 769
@@ -193,10 +193,15 @@ const Index = ({ data }) => {
                 </a>
               ))}
             </div>
-            <div
-              className="splash-email"
-              dangerouslySetInnerHTML={{ __html: email }}
-            ></div>
+            <div>
+              <div
+                className="splash-email"
+                dangerouslySetInnerHTML={{ __html: email }}
+              ></div>
+              <a href={careersLink} target="_blank" rel="noreferrer">
+                CAREERS
+              </a>
+            </div>
             <a
               href={addressLink}
               target="_blank"
@@ -260,10 +265,12 @@ const Index = ({ data }) => {
           ></a>
           <div>{nysedCredit}</div>
         </div>
-        <div
-          className="mobile-splash-email"
-          dangerouslySetInnerHTML={{ __html: email }}
-        ></div>
+        <div className="mobile-splash-email">
+          <div dangerouslySetInnerHTML={{ __html: email }}></div>
+          <a href={careersLink} target="_blank" rel="noreferrer">
+            CAREERS
+          </a>
+        </div>
         <div className="mobile-sign-up">
           <EmbedForm></EmbedForm>
         </div>
@@ -328,6 +335,7 @@ export const query = graphql`
         }
       }
       nysedCredit
+      careersLink
     }
   }
 `
